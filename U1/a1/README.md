@@ -23,4 +23,4 @@ Conectamos el cliente GNU/linux con el Servidor VNC Windows
 
 ![De OpenSUSE a Windows](./images/opensuse-windows.png)
 
-![Comando netstat](./images/netsat-opensuse.png)
+![Comando netstat](./images/netstat-opnsuse.png)
