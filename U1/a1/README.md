@@ -7,7 +7,7 @@
 
 ## 2.1. Comprobación Windows
 
-![Comprobar Windows](./images/netstat-s.png)
+![Comprobar Windows](./images/netstat-n-windows.png)
 
 ---
 
