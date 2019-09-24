@@ -5,7 +5,7 @@
 
 ---
 
-## 2.1. Comprobación Windws
+## 2.1. Comprobación Windows
 
 ![Comprobar Windows](./images/netstat-s.png)
 
