@@ -27,6 +27,6 @@ Conectamos el cliente GNU/linux con el Servidor VNC Windows
 
 Conectamos el cliente Windows con el Servidor GNU/Linux.
 
-![](./images/windows-opensuse.png)
+![De Windows a Opensuse](./images/windows-opensuse.png)
 
-![](./images/lsof-i.png)
+![Comando lsof -i](./images/lsof-i.png)
