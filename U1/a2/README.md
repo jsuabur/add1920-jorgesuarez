@@ -54,9 +54,13 @@ Tras hacer las comprobaciones, crearemos los siguientes usuarios:
 
 ### 1.2. Cliente GNU/Linux
 
+En el cliente GNU/Linux añadimos al fichero `/etc/hosts` los equipos `ssh-server15g` y `ssh-client15w`
 
+![Fichero Client /etc/hosts](./images/hosts-client-os.png)
 
-![](./images/.png)
+Comprobamos que esta bien configurado haciendo ping a ambos equipos:
+
+![Comprobación Ping](./images/comp-hosts.png)
 
 ### 1.3. Cliente Windows
 
