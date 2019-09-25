@@ -10,9 +10,9 @@ Necesitaremos 4 MV's con la siguiente configuración
 Función      | Sistema Operativo   |      IP        |    Nombre      |
 :----------: | :-----------------: | :------------: | :------------: |
 Servidor SSH | GNU/Linux OpenSUSE  | `172.19.15.31` | ssh-server15g  |
-Cliente SSH  | GNU/Linux OpenSUSE  | `172.19.15.32` | ssh-cliente15g |
+Cliente SSH  | GNU/Linux OpenSUSE  | `172.19.15.32` | ssh-client15g |
 Servidor SSH | Windows Server 2016 | `172.19.15.11` | ssh-server15w  |
-Cliente SSH  | Windows7            | `172.19.15.12` | ssh-cliente15w |
+Cliente SSH  | Windows7            | `172.19.15.12` | ssh-client15w |
 
 ---
 
@@ -64,9 +64,14 @@ Comprobamos que esta bien configurado haciendo ping a ambos equipos:
 
 ### 1.3. Cliente Windows
 
+Instalamos software cliente SSh en Windows. Para ello utilizaremos `PuTTy`
 
+![PuTTY](./images/putty.png)
 
-![](./images/.png)
+Añadimos los equipos`ssh-server15g` y `ssh-client15g` en el fichero `C:\Windows\System32\drivers\etc\hosts`.
+  * Comprobamos que esta bien configurado haciendo ping a los dos equipos.
+
+![Comprobar hosts Windows](./images/hosts-client-w.png)
 
 ---
 
