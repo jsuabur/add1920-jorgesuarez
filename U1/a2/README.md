@@ -20,9 +20,37 @@ Cliente SSH  | Windows7            | `172.19.15.12` | ssh-cliente15w |
 
 ### 1.1. Servidor SSH
 
+**Server OpenSUSE**
 
+Añadimos en `/etc/hosts` los equipos `ssh-client15g` y `ssh-client15w`:
 
-![](./images/.png)
+![Fichero /etc/hosts Server OpenSUSE](./images/hosts-server-os.png)
+
+Para comprobar los cambios ejecutamos los siguientes comandos:
+  * `ip a`
+  * `ip route`
+
+![Comprobacion IMG1](./images/comp1-server-os.png)
+
+  * `ping 8.8.4.4 -c1`
+  * `host www.nba.com`
+  * `ping ssh-client15g -c1`
+
+![Comprobación IMG2](./images/comp2-server-os.png)
+
+  * `ping ssh-client15w -c1`
+  * `lsblk`
+  * `sudo blkid`
+
+![Comprobación IMG3](./images/comp3-server-os.png)
+
+Tras hacer las comprobaciones, crearemos los siguientes usuarios:
+  * `suarez1`
+  * `suarez2`
+  * `suarez3`
+  * `suarez4`
+
+![Creación de usuarios](./images/usuarios.png)
 
 ### 1.2. Cliente GNU/Linux
 
