@@ -79,9 +79,11 @@ Añadimos los equipos`ssh-server15g` y `ssh-client15g` en el fichero `C:\Windows
 
 ### 2.1. Comprobación
 
+Desde el propio **ssh-server** verificamos que el servicio esta en ejecución con los siguientes comandos:
+  * `systemctl status sshd`
+  * `ps -ef | grep sshd`
 
-
-![](./images/.png)
+![Status SSH](./images/ssh-server-os.png)
 
 ### 2.2. Primera conexión SSH desde cliente GNU/Linux
 
