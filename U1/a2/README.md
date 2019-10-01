@@ -94,7 +94,7 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ![Comando lsof](./images/.png)
 
-[¹]: Explicacion
+[¹]: Nota a pie de pagina
 
 ### 2.2. Primera conexión SSH desde cliente GNU/Linux
 
