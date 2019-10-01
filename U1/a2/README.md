@@ -89,8 +89,9 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ![Status SSH](./images/ssh-server-os.png)
 
-* Para comprobar que el servicio está escuchando por el puerto 22 [¹] utilizamos el siguiente comando:
-[¹] Puerto utilizado para la conexión.
+* Para comprobar que el servicio está escuchando por el puerto 22 [^1] utilizamos el siguiente comando: 
+
+[^1]: Puerto utilizado para la conexión.
 
 ~~~console
 sudo lsof -i:22 -n
