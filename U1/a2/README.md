@@ -181,4 +181,5 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 ---
 ##### Notas a pie de página
 
-###### Puertos escuchando: Puerto abiertos que usa el ordenador para la respectiva comunicación en la red.
+###### Servicio escuchando por el puerto:
+:     Significa que el servicio utiliza dicho puerto abierto para la respectiva comunicación en la red.
