@@ -77,6 +77,10 @@ Añadimos los equipos`ssh-server15g` y `ssh-client15g` en el fichero `C:\Windows
 
 ## 2. Instalación del servicio SSH
 
+Instalamos el servicio SSH en la máquina ssh-server15g por comandos:
+  * Ejecutamos en la terminal `zypper search openssh` para mostrar los paquetes instalados o no con nombre *openssh*.
+  * Ahora ejecutamos `zypper install openssh` para instalar el paquete **OpenSSH**.
+
 ### 2.1. Comprobación
 
 Desde el propio **ssh-server** verificamos que el servicio esta en ejecución con los siguientes comandos:
@@ -84,6 +88,13 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
   * `ps -ef | grep sshd`
 
 ![Status SSH](./images/ssh-server-os.png)
+
+* Para comprobar que el servicio está escuchando por el puerto 22 [¹] utilizamos el siguiente comando:
+[¹] Puerto utilizado para la conexión.
+
+~~~console
+sudo lsof -i:22 -n
+~~~
 
 ### 2.2. Primera conexión SSH desde cliente GNU/Linux
 
