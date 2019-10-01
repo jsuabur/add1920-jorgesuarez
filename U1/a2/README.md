@@ -89,11 +89,12 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ![Status SSH](./images/ssh-server-os.png)
 
-* Para comprobar que el servicio está escuchando por el puerto 22 [^nota1] utilizamos el siguiente comando: 
+* Para comprobar que el servicio está escuchando por el puerto 22 utilizamos el siguiente comando: [^1]
+  * `sudo lsof -i:22 -n`
 
-~~~console
-sudo lsof -i:22 -n
-~~~
+![Comando lsof](./images/.png)
+
+[^1]: Explicacion
 
 ### 2.2. Primera conexión SSH desde cliente GNU/Linux
 
@@ -178,5 +179,3 @@ sudo lsof -i:22 -n
 
 
 ![](./images/.png)
-
-[^nota1]: Puerto utilizado para la conexión.
