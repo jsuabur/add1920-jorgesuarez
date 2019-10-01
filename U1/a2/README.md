@@ -89,10 +89,10 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ![Status SSH](./images/ssh-server-os.png)
 
-* Para comprobar que el servicio está escuchando por el puerto [¹](#-servicio-escuchando-por-el-puerto-22-significa-que-el-servicio-utiliza-dicho-puerto-abierto-para-la-respectiva-comunicación-en-la-red) 22 utilizamos el siguiente comando:
+* Para comprobar que el servicio está escuchando por el puerto 22[^2] [¹](#-servicio-escuchando-por-el-puerto-22-significa-que-el-servicio-utiliza-dicho-puerto-abierto-para-la-respectiva-comunicación-en-la-red) utilizamos el siguiente comando:
   * `sudo lsof -i:22 -n`
 
-![Comando lsof](./images/.png)
+![Comando lsof](./images/lsof-22.png)
 
 ### 2.2. Primera conexión SSH desde cliente GNU/Linux
 
@@ -180,5 +180,5 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ---
 #### Notas a pie de página
-
+[^2]: Nota a pie de pagina
 ###### **¹** Servicio escuchando por el puerto 22: *Significa que el servicio utiliza dicho puerto abierto para la respectiva comunicación en la red.*
