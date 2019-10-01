@@ -181,4 +181,4 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 ---
 #### Notas a pie de página
 
-###### Servicio escuchando por el puerto: `Significa que el servicio utiliza dicho puerto abierto para la respectiva comunicación en la red.`
+###### **¹** Servicio escuchando por el puerto: `Significa que el servicio utiliza dicho puerto abierto para la respectiva comunicación en la red.`
