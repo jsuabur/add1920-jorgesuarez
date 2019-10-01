@@ -30,7 +30,7 @@ Para comprobar los cambios ejecutamos los siguientes comandos:
   * `ip a`
   * `ip route`
 
-![Comprobacion IMG1](./images/comp1-server-os.png)
+![CAMBIAR Comprobacion IMG1](./images/comp1-server-os.png)
 
   * `ping 8.8.4.4 -c1`
   * `host www.nba.com`
@@ -89,16 +89,29 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ![Status SSH](./images/ssh-server-os.png)
 
-* Para comprobar que el servicio está escuchando por el puerto 22[^2] [¹](#-servicio-escuchando-por-el-puerto-22-significa-que-el-servicio-utiliza-dicho-puerto-abierto-para-la-respectiva-comunicación-en-la-red) utilizamos el siguiente comando:
+* Para comprobar que el servicio está escuchando por el puerto 22 [¹](#-servicio-escuchando-por-el-puerto-22-significa-que-el-servicio-utiliza-dicho-puerto-abierto-para-la-respectiva-comunicación-en-la-red) utilizamos el siguiente comando:
   * `sudo lsof -i:22 -n`
 
 ![Comando lsof](./images/lsof-22.png)
 
 ### 2.2. Primera conexión SSH desde cliente GNU/Linux
 
+Vamos al cliente -> `ssh-client15g`
+  * Comprobamos la conectividad con el servidor con `ping ssh-server15g -c3`.
+  * `nmap -Pn ssh-server15g` para comprobar los puertos abiertos en el servidor (SSH debe estar open). Debe mostrarnos que el puerto 22 está abierto. Si sale una línea como *22/tcp  open  ssh*
 
+![Ping y nmap hacia servidor](./images/ping-nmap-cs.png)
 
-![](./images/.png)
+Ahora tras las revisiones previas, comprobamos la conexión ssh usando el usuario `suarez1`
+  * Comprobamos que en la primera conexión de SSH hay un intercambio de claves:
+
+![Intercambio de claves en GNU/Linux](./images/claves-os.png)
+
+  * Cuando nos volvemos a conectar, ya no hay intercambio porque las claves se alojan en el fichero `known_hosts` que está en la carpeta oculta `ssh`
+
+![Segunda conexión ssh](./images/login-again-os.png)
+
+![Claves conocidas](./images/know-hosts.png)
 
 ### 2.3. Primera conexión SSH desde el cliente Windows
 
@@ -180,5 +193,5 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ---
 #### Notas a pie de página
-[^2]: Nota a pie de pagina
+
 ###### **¹** Servicio escuchando por el puerto 22: *Significa que el servicio utiliza dicho puerto abierto para la respectiva comunicación en la red.*
