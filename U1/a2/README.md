@@ -89,7 +89,7 @@ Desde el propio **ssh-server** verificamos que el servicio esta en ejecución co
 
 ![Status SSH](./images/ssh-server-os.png)
 
-* Para comprobar que el servicio está escuchando por el puerto [¹](##-servicio-escuchando-por-el-puerto-significa-que-el-servicio-utiliza-dicho-puerto-abierto-para-la-respectiva-comunicación-en-la-red) 22 utilizamos el siguiente comando: 
+* Para comprobar que el servicio está escuchando por el puerto [¹](#-servicio-escuchando-por-el-puerto-significa-que-el-servicio-utiliza-dicho-puerto-abierto-para-la-respectiva-comunicación-en-la-red) 22 utilizamos el siguiente comando: 
   * `sudo lsof -i:22 -n`
 
 ![Comando lsof](./images/.png)
