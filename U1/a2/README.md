@@ -115,9 +115,16 @@ Ahora tras las revisiones previas, comprobamos la conexión ssh usando el usuari
 
 ### 2.3. Primera conexión SSH desde el cliente Windows
 
+Desde el cliente Windows nos conectamos usando `PuTTY`.
 
+![Claves de Server OpenSUSE](./images/clientew-conect-server-os.png)
 
-![](./images/.png)
+  * No usaremos `Save Settings` para guardar la configuración de la conecxión SSh en los perfiles de *PuTTY*.
+  * En la ventana `PuTTY Security Alert`, poner SI grabar las información del servidor.
+* La clave que nos aparece es la clave de identificación de la máquina ssh-server.
+* Una vez llegado hasta aquí debería conectar correctamente sin intercambio de claves.
+
+![Conectado a Server OpenSUSE](./images/conectado-serverg-windows.png)
 
 ---
 
