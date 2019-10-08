@@ -130,11 +130,24 @@ Desde el cliente Windows nos conectamos usando `PuTTY`.
 
 ## 3. Cambiamos la identidad del servidor
 
+Confirmamos que existen los ficheros `ssh_host*key` y `ssh_host*key.pub`[2](#-ssh_hostkey-y-ssh_hostkeypub-son-los-ficheros-de-clave-públicaprivada-que-identifican-a-nuestro-servidor-frente-a-nuestros-clientes) en `/etc/ssh`.
+
+![Claves publica/privada](./images/claves-pub-pri.png)
+
+Modificamos el fichero de configuración SSH (`/etc/ssh/sshd_config`) para dejar una única línea:
+
+~~~
+HostKey
+/etc/ssh/ssh_host_rsa_key
+~~~
+
+Comentamos el resto de líneas con configuración HostKey. Este parámetro define los ficheros de clave pública/privada que van a identificar a nuestro servidor.Con este cambio decimos que sólo vamos a usar las claves del tipo RSA.
+
+![Comentar fichero](./images/.png)
+
 ### 3.1. Regenerar certificados
 
-Confirmamos que existen los ficheros `ssh_host*key` y `ssh_host*key.pub`[2](#) en `/etc/ssh`
 
-![](./images/.png)
 
 ### 3.2. Comprobamos
 
