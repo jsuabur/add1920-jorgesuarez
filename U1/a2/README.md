@@ -132,7 +132,7 @@ Desde el cliente Windows nos conectamos usando `PuTTY`.
 
 ### 3.1. Regenerar certificados
 
-
+Confirmamos que existen los ficheros `ssh_host*key` y `ssh_host*key.pub`[2](#) en `/etc/ssh`
 
 ![](./images/.png)
 
@@ -202,3 +202,5 @@ Desde el cliente Windows nos conectamos usando `PuTTY`.
 #### Notas a pie de página
 
 ###### **¹** Servicio escuchando por el puerto 22: *Significa que el servicio utiliza dicho puerto abierto para la respectiva comunicación en la red.*
+
+###### **²** ssh_host*key y ssh_host*key.pub: *Son los ficheros de clave pública/privada que identifican a nuestro servidor frente a nuestros clientes*
