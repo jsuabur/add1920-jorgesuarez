@@ -178,9 +178,36 @@ jorge@ssh-client15g:~> sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
 ## 4. Personalización del prompt Bash
 
+Añadiremos las siguientes líneas al fichero de configuración del `suarez1` en la máquina servidor. (`/home/suarez1/.bashrc`)
 
+~~~console
+# Se cambia el prompt al cnectarse vía SSH
 
-![](./images/.png)
+if [ -n "$SSH_CLIENT" ]; then
+    PS1="AccesoRemoto_\e[32m\u@\h:\e[0m \w\a\$ "
+else
+    PS1="\[$(pwd)\]\u@\h:\w>"
+~~~
+
+![](./images/prompt-bash.png)
+
+Ademas, crearemos el fichero `/home/suarez1/.alias`, donde pondremos el siguiente contenido:
+
+~~~console
+alias c='clear'
+alias g='geany'
+alias p='ping'
+alias v='vdir -cF1'
+alias s='ssh'
+~~~
+
+![](./images/prompt-alias.png)
+
+Comprobamos el funcionamiento de la conexión SSH y de el alias que nosotros elijamos.
+
+![](./images/prompt-mejorado.png)
+
+![](./images/alias-prueba.png)
 
 ---
 
