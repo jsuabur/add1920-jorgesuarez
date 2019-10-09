@@ -147,13 +147,28 @@ Comentamos el resto de líneas con configuración HostKey. Este parámetro defin
 
 ### 3.1. Regenerar certificados
 
+Vamos a generar nuevas claves públicas/privadas ara la identificación de nuestro servidor.
+  * En **ssh-server15g**, como usuario root ejecutamos: `ssh-keygen -t rsa -F /etc/ssh/ssh_host_rsa_key` y reiniciamos el servidor SSH.
 
+![Generar claves](./images/ssh-keygen.png)
+
+![Reiniciar el servidor](./images/comprobar-31.png)
 
 ### 3.2. Comprobamos
 
+Ahora comprobamos que sucede al reconectarnos desde los dos clientes.
 
+![Error de clave pública](./images/ssh-error-32.png)
 
-![](./images/.png)
+> Con vemos, no se nos conecta porque no coincide la clave para el servidor, así que tendremos que cambiarla.
+
+Para cambiarla ejecutamos el siguiente comando:
+
+~~~
+jorge@ssh-client15g:~$
+~~~
+
+![](./images/nuevo-ssh-32.png)
 
 ---
 
