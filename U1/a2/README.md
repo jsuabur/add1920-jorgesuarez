@@ -213,49 +213,29 @@ Comprobamos el funcionamiento de la conexión SSH y de el alias que nosotros eli
 
 ## 5. Autenticación mediante claves públicas
 
+* Vamos a la máquina `ssh-client15g`.
+* Iniciamos sesión con nuestro usuario, `jorge` en mi caso.
+* Con el comando `ssh-keygen -t rsa` generamos un nuevo par de claves para el usuario en:
+  * `/home/jorge/.ssh/id_rsa`
+  * `/home/jorge/.ssh/id_rsa.pub`
 
+![](./images/copiar-clave.png)
 
-![](./images/.png)
+![](./images/contraseña.png)
 
 ---
 
 ## 6. Uso de SSH como túnel para X
 
+* Instalamos en el servidor una aplicación de entorno gráfico que no esté en los clientes, en mi caso `Geany`.
+* Modificamos servidor SSH para permitir la ejecución de aplicaciones gráficas desde los clientes. Consultamos el fichero de configuración `/etc/ssh/sshd_config`
 
+Vamos a `ssh-client15g`.
+* `zypper se geany`.
+* Vamos a comprobar desde ssh-client15g, que funciona geany.
+  * `ssh -X suarez1@ssh-server15g`, nos conectamos de forma remota al servidor, y ahora ejecutamos geany de forma remota.
 
-![](./images/.png)
-
----
-
-## 7. Aplicaciones Windows nativas
-
-
-
-![](./images/.png)
-
----
-
-## 8. Restricciones de uso
-
-### 8.1. Restricción sobre un usuario
-
-
-
-![](./images/.png)
-
-### 8.2. Restricción sobre una aplicación
-
-
-
-![](./images/.png)
-
----
-
-## 9. Servidor SSH en Windows
-
-
-
-![](./images/.png)
+![APP1](./images/app1.png)
 
 ---
 #### Notas a pie de página
