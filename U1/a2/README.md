@@ -158,17 +158,21 @@ Vamos a generar nuevas claves públicas/privadas ara la identificación de nuest
 
 Ahora comprobamos que sucede al reconectarnos desde los dos clientes.
 
+**OpenSUSE**
+
 ![Error de clave pública](./images/ssh-error-32.png)
 
 > Con vemos, no se nos conecta porque no coincide la clave para el servidor, así que tendremos que cambiarla.
 
 Para cambiarla ejecutamos el siguiente comando:
 
-~~~
-jorge@ssh-client15g:~$
+~~~console
+jorge@ssh-client15g:~> sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 ~~~
 
-![](./images/nuevo-ssh-32.png)
+![Nueva Clave Pública](./images/nuevo-ssh-32.png)
+
+![Windows7 Conectado](./images/windows-comp-32.png)
 
 ---
 
