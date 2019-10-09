@@ -143,8 +143,6 @@ HostKey
 
 Comentamos el resto de líneas con configuración HostKey. Este parámetro define los ficheros de clave pública/privada que van a identificar a nuestro servidor.Con este cambio decimos que sólo vamos a usar las claves del tipo RSA.
 
-![Comentar fichero](./images/.png)
-
 ### 3.1. Regenerar certificados
 
 Vamos a generar nuevas claves públicas/privadas ara la identificación de nuestro servidor.
