@@ -63,7 +63,20 @@ Se nos crea el script en `/usr/sbin/setup-ds.pl`, lo ejecutamos y a continuació
 
 ### 3.1. Buscar Unidades Organizativas
 
+Las OU `People` y `Gropus` deberían estar creadas. en caso contrario las creamos.
 
+Podemos usar los siguientes parámetros con el comando `ldapsearch` para buscar las OU:
+
+|      Parámetro              | Descripción                     |
+| --------------------------- | ------------------------------- |
+| -H ldap://localhost:389     | IP:puerto del servidor          |
+| -W                          | Se solicita contraseña          |
+| -D "cn=Directory Manager"   | Usuario de la conexión          |
+| -b "dc=ldap42,dc=curso1920" | Base donde comenzar la búsqueda |
+| "(uid=*)"                   | Filtro para la búsqueda         |
+
+> EJEMPLO:
+> ldapsearch -H ldap://localhost:389
 
 ![](./images.png)
 
