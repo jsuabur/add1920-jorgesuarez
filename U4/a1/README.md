@@ -50,7 +50,7 @@ Se nos crea el script en `/usr/sbin/setup-ds.pl`, lo ejecutamos y a continuació
 | Parámetro                   | Descripción                |
 | :-------------------------: | :------------------------: |
 | -x                          | No se valida usuario/clave |
-| -b "dc=ldap42,dc=curso1920" | Base/sufijo del contenido  |
+| -b "dc=ldap15,dc=curso1920" | Base/sufijo del contenido  |
 | -H ldap://localhost:389     | IP:puerto del servidor     |
 | -W                          | Se solicita contraseña     |
 | -D "cn=Directory Manager"   | Usuario del LDAP           |
@@ -67,13 +67,10 @@ Las OU `People` y `Gropus` deberían estar creadas. en caso contrario las creamo
 
 Podemos usar los siguientes parámetros con el comando `ldapsearch` para buscar las OU:
 
-|      Parámetro              | Descripción                     |
-| --------------------------- | ------------------------------- |
-| -H ldap://localhost:389     | IP:puerto del servidor          |
-| -W                          | Se solicita contraseña          |
-| -D "cn=Directory Manager"   | Usuario de la conexión          |
-| -b "dc=ldap42,dc=curso1920" | Base donde comenzar la búsqueda |
-| "(uid=*)"                   | Filtro para la búsqueda         |
+| Parámetro | Descripción                                      |
+| --------- | ------------------------------------------------ |
+| "(ou=*)"  | Filtro para la búsqueda de UnidadesOrganizativas |
+| "(uid=*)" | Filtro para la búsqueda de usuarios              |
 
 > EJEMPLO:
 > ldapsearch -H ldap://localhost:389
@@ -82,11 +79,35 @@ Podemos usar los siguientes parámetros con el comando `ldapsearch` para buscar 
 
 ### 3.2. Agregar usuarios
 
+Uno de los usos más frecuentes para el directorio LDAP es para la administración de usuarios. Vamos a utilizar ficheros **ldif** para agregar usuarios.
+* Fichero `mazinger-add.ldif` con la información para el crear el usuario `mazinger`.
 
+```
+dn: uid=mazinger,ou=people,dc=ldap15,dc=curso1920
+uid: mazinger
+cn: Mazinger Z
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+userPassword: {CLEARTEXT}escribir la clave secreta
+shadowLastChange: 14001
+shadowMax: 99999
+shadowWarning: 7
+loginShell: /bin/bash
+uidNumber: 2001
+gidNumber: 100
+homeDirectory: /home/mazinger
+gecos: Mazinger Z
+```
+
+Tras crear el fichero añadiremos los datos en LDAP con el comando `ldapadd -x -W -D "cn=Directory Manager" -f mazinger-add.ldif`
 
 ![](./images/.png)
 
 ### 3.3. Comprobar el nuevo usuario
+
+Para comprobar si se ha creado el usuario en el LDAP utilizamos el comando `ldapsearch -W -D "cn=Directory Manager" -b "dc=ldap15,dc=curso1920" "(uid=*)"`
 
 
 
@@ -133,12 +154,18 @@ clave secreta
 
 ### 4.2. Agregar más usuarios
 
+* Creamos los siguientes usuarios en LDAP:
 
+| Full name       | Login Account | UID  |
+| --------------- | ------------- | ---- |
+| Koji Kabuto     | koji          | 2002 |
+| Boss            | boss          | 2003 |
+| Doctor Infierno | drinfierno    | 2004 |
 
 ![](./images/.png)
 
 ### 4.3. Comprobar los usuarios creados
 
+Consultamos los usuarios LDAP para ver si se han añadido correctamente.
 
-
-![](./images/.png)
+![](./images/usuarios-añadidos.png)
