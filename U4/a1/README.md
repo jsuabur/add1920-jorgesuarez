@@ -35,7 +35,9 @@ Abrimos una consola como **root**
 Instalamos el script con `zypper in 389-ds`.
 Se nos crea el script en `/usr/sbin/setup-ds.pl`, lo ejecutamos y a continuación iremos respondiendo a las preguntas de configuración del servicio.
 
-![](./images.png)
+![](./images/389-ds-1.png)
+![](./images/389-ds-2.png)
+![](./images/389-ds-3.png)
 
 ### 2.2. Comprobamos el servicio
 
@@ -44,6 +46,8 @@ Se nos crea el script en `/usr/sbin/setup-ds.pl`, lo ejecutamos y a continuació
 ![](./images/.png)
 
 `nmap -Pn server15 | grep -P '389|636'`
+
+![](./images/nmap-389.png)
 
 ### 2.3. Comprobamos el acceso al contenido del LDAP
 
@@ -55,7 +59,9 @@ Se nos crea el script en `/usr/sbin/setup-ds.pl`, lo ejecutamos y a continuació
 | -W                          | Se solicita contraseña     |
 | -D "cn=Directory Manager"   | Usuario del LDAP           |
 
-![](./images/.png)
+![](./images/ldapsearch-dn.png)
+
+![](./images/ldapsearch-manager.png)
 
 ---
 
@@ -75,7 +81,7 @@ Podemos usar los siguientes parámetros con el comando `ldapsearch` para buscar 
 > EJEMPLO:
 > ldapsearch -H ldap://localhost:389
 
-![](./images.png)
+![](./images/dn-sinusuarios.png)
 
 ### 3.2. Agregar usuarios
 
@@ -103,15 +109,13 @@ gecos: Mazinger Z
 
 Tras crear el fichero añadiremos los datos en LDAP con el comando `ldapadd -x -W -D "cn=Directory Manager" -f mazinger-add.ldif`
 
-![](./images/.png)
+![](./images/mazinger-add.png)
 
 ### 3.3. Comprobar el nuevo usuario
 
 Para comprobar si se ha creado el usuario en el LDAP utilizamos el comando `ldapsearch -W -D "cn=Directory Manager" -b "dc=ldap15,dc=curso1920" "(uid=*)"`
 
-
-
-![](./images/.png)
+![](./images/ldap-usuario.png)
 
 ---
 
@@ -150,7 +154,7 @@ clave secreta
 43cff9e9a30167a1e383026bf61108f2  -
 ```
 
-![](./images.png)
+![](./images/in-openldap2.png)
 
 ### 4.2. Agregar más usuarios
 
@@ -162,7 +166,17 @@ clave secreta
 | Boss            | boss          | 2003 |
 | Doctor Infierno | drinfierno    | 2004 |
 
-![](./images/.png)
+**Koji Kabuto**
+
+![](./images/koji-kabuto.png)
+
+**Boss**
+
+![](./images/boss.png)
+
+**Doctor Infierno**
+
+![](./images/drinfierno.png)
 
 ### 4.3. Comprobar los usuarios creados
 
