@@ -1,0 +1,119 @@
+# Autor: Jorge Suárez Burgos
+# Fecha de creación: 2020-01-08
+
+
+# Función para ver la ayuda/información.
+def show_help
+  puts "Usage:"
+  puts "    softwarectl [OPTIONS] [FILENAME]"
+  puts "Options:"
+  puts "    -h,          --help                  mostrar esta ayuda"
+  puts "    -v,          --version               mostrar información sobre el autor del script"
+  puts "                                         y fecha de creación."
+  puts "    -s FILENAME, --status FILENAME       comprueba si puede instalar/desinstalar"
+  puts "    -r FILENAME, --run FILENAME          instala/desinstala el software indicado."
+  puts ""
+  puts "Description:"
+  puts "        Este script se encarga de instalar/desinstalar"
+  puts "        el software inficado en el fichero FILENAME."
+  puts "        Ejemplo de FILENAME:"
+  puts "        tree:install"
+  puts "        nmap:install"
+  puts "        atomix:remove"
+  puts ""
+  exit
+end
+
+
+# Función para ver información del autor y fecha de creación del script.
+def show_version
+  puts "Autor:"
+  puts "        Jorge Suárez Burgos"
+  puts "Fecha de creación:"
+  puts "        2020-01-08"
+  puts "Fecha de modificación:"
+  # Comando para mostrar la fecha de la última modificación del fichero.
+  statdate = `stat softwarectl.rb | grep Modificación`
+  dateday = statdate.split
+  puts "        #{dateday[1]}"
+end
+
+
+# Función para visualizar el contenido del fichero FILENAME.
+def show_filename
+  filename = `cat FILENAME`.split("\n")
+  filename.each do |word|
+    package = word.split(":")
+    stat = Integer(`apt search #{package[0]} 2>/dev/null | grep 'instalado' | grep '#{package[0]}/bionic' | wc -l`)
+    if stat == 0
+      puts "#{package[0]} -> (U) uninstalled"
+    elsif stat > 0
+      puts "#{package[0]} -> (I) installed"
+    end
+  end
+end
+
+
+# Función para instalar/desinstalar programas
+def run_filename
+  filename = `cat FILENAME`.split("\n")
+  filename.each do |word|
+    package = word.split(":")
+    stat = Integer(`apt search #{package[0]} 2>/dev/null | grep 'instalado' | grep '#{package[0]}/bionic'| wc -l`)
+    if stat == 0
+      # Comprobación de que el programa está instalado.
+      comp = Integer(`apt-get search #{package[0]} 2>/dev/null | grep 'instalado' | grep '#{package[0]}/bionic' | wc -l`)
+      if comp == 0
+        puts ""
+        puts "Instalando #{package[0]}..."
+        `apt install -y #{package[0]} 2>/dev/null`
+        puts "#{package[0]} se instaló correctamente."
+        puts ""
+      elsif comp > 0
+        puts ""
+        puts "El software '#{package[0]}' ya está instalado"
+        puts ""
+      end
+    elsif stat > 0
+      # Comprobación de que el programa está desinstalado.
+      comp = Integer(`apt search #{package[0]} 2>/dev/null | grep 'instalado' | grep '#{package[0]}/bionic' | wc -l`)
+      if comp == 0
+        puts ""
+        puts "El software '#{package[0]}' ya está desinstalado"
+        puts ""
+      elsif comp > 0
+        puts ""
+        puts "Desinstalando #{package[0]}..."
+        `apt remove -y #{package[0]} 2>/dev/null`
+        puts "#{package[0]} se desinstaló correctamente"
+        puts ""
+      end
+    else
+      puts "Ha ocurrido un error inesperado"
+    end
+  end
+end
+
+
+# Entrada de argumentos
+if ARGV.empty?
+  puts "Pruebe 'softwarectl --help' ó 'softwarectl -h' para más información"
+elsif ARGV[0] == '--help' or ARGV[0] == '-h'
+  show_help
+elsif ARGV[0] == '--version' or ARGV[0] == '-v'
+  show_version
+elsif ARGV[0] == '--status' or ARGV[0] == '-s' and ARGV[1] == 'FILENAME'
+  show_filename
+elsif ARGV[0] == '--run' or ARGV[0] == '-r' and ARGV[1] == 'FILENAME'
+  user = `whoami`.chop
+  if user == 'root'
+    run_filename
+  else
+    puts "ERROR: Permiso denegado"
+    puts "Necesitas ser superusuario (root)"
+    exit 1
+  end
+else
+  puts "ERROR: Compruebe el comando"
+  puts "Pruebe 'softwarectl --help' ó 'softwarectl -h' para más información"
+end
