@@ -3,23 +3,89 @@
 
 ---
 
-## 1.
+## Comprobación
 
+![](./images/1-version-vagrant.png)
 
+## 1. Proyecto Celtics
+
+**Crear Proyecto Celtics**
+
+![](./images/2-vagrant-box.png)
+
+![](./images/3-list-box.png)
+
+**Vagrantfile**
+
+![](./images/4-vagrantfile.png)
+
+**Levantar máquina**
+
+![](./images/5-box-up.png)
+
+**Entrar por ssh**
+
+![](./images/6-box-ssh.png)
+
+---
+
+## 2. Proyecto Hawks
+
+**Crear Proyecto Hawks**
+
+![](./images/7-proyect2-opensuse.png)
+
+**Vagrantfile Hawks**
+
+![](./images/8-vagrantfile-suse.png)
+
+**Redirección de puertos**
+
+![](./images/9-vagrant-port.png)
+
+**Comprobación**
+
+![](./images/10-vagrant-url.png)
+
+---
+
+## 3. Proyecto Lakers
+
+**Crear Proyecto Lakers HTML**
+
+![](./images/11-html-more.png)
+
+**Vagrantfile Lakers**
+
+![](./images/vagrantfile-lakers.png)
+
+**Comprobación**
+
+![](./images/12-lakers.png)
+
+---
+
+## 4. Proyecto Raptors
+
+**Crear proyecto Raptors**
+
+![](./images/raptors-debian.png)
+
+**Vagrantfile Raptors**
+
+![](./images/vagrantfile-raptors.png)
+
+**Manifest**
+
+![](./images/jorge15-pp.png)
+
+**Comprobación Puppet**
 
 ![](./images/.png)
 
 ---
 
-## 2.
-
-
-
-![](./images/.png)
-
----
-
-## 3.
+## 4. Proyecto Bulls
 
 
 
