@@ -3,9 +3,9 @@
 
 ---
 
-## Comprobación
+## Comprobando Vagrant
 
-![](./images/1-version-vagrant.png)
+![](./images/1-version-vag-box.png)
 
 ## 1. Proyecto Celtics
 
@@ -78,6 +78,10 @@
 **Manifest**
 
 ![](./images/jorge15-pp.png)
+
+**Levantar máquina**
+
+![](./images/.png)
 
 **Comprobación Puppet**
 
