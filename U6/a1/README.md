@@ -75,23 +75,19 @@
 
 ![](./images/vagrantfile-raptors.png)
 
-**Manifest**
-
-![](./images/jorge15-pp.png)
-
-**Levantar máquina**
-
-![](./images/.png)
-
 **Comprobación Puppet**
 
-![](./images/.png)
+![](./images/vagrant-raptors-pro.png)
 
 ---
 
 ## 4. Proyecto Bulls
 
+**Crear Proyecto Bulls**
 
+![](./images/.png)
+
+**Levantar máquina con OpenSSH**
 
 ![](./images/.png)
 
