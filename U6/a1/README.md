@@ -83,12 +83,14 @@
 
 ## 4. Proyecto Bulls
 
+**Preparar máquina**
+
+![](./images/14-pre-bulls.png)
+
+![](./images/15-sudoers-vagrant.png)
+
 **Crear Proyecto Bulls**
 
-![](./images/.png)
+![](./images/16-mybox-package.png)
 
-**Levantar máquina con OpenSSH**
-
-![](./images/.png)
-
----
+![](./images/17-vagrant-list.png)
