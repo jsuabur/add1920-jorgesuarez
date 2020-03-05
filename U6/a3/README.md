@@ -7,11 +7,13 @@
 
 ### 3.2. Comprobamos
 
-![](./images/.png)
+![](./images/3-2.png)
 
 ### 3.3. Migrar la imagen a otra máquina
 
-![](./images/.png)
+![](./images/3-3-1.png)
+
+![](./images/3-3-2.png)
 
 ---
 
@@ -19,14 +21,12 @@
 
 ### 4.2. Crear imagen a  partir de Dockerfile
 
-![](./images/.png)
+![](./images/4-2-1.png)
+
+![](./images/4-2-2.png)
 
 ### 4.3. Crear contenedor y comprobar
 
-![](./images/.png)
+![](./images/4-3-1.png)
 
-### 4.4 Usar imágenes ya creadas
-
-![](./images/.png)
-
----
+![](./images/4-3-2.png)
