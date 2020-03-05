@@ -3,75 +3,17 @@
 
 ---
 
-## 1. Preparativos
+### 3.4. Comprobamos conectividad
 
-
-
-![](./images/.png)
-
----
-
-## 2. Master: instalar y configurar
-
-
-
-![](./images/.png)
-
----
-
-## 3. Minion
-
-### 3.1. Instalación y configuración
-
-
-
-![](./images/.png)
-
-### 3.2. Aceptación desde el Master
-
-
-
-![](./images/.png)
-
-### 3.3. Comprobamos actividad
-
-
-
-![](./images/.png)
+![](./images/3-4.png)
 
 ---
 
 ## 4. Salt States
 
-### 4.1. Preparar el directorio para los estados
-
-
-
-![](./images/.png)
-
-### 4.2. Crear un nuevo estado
-
-
-
-![](./images/.png)
-
-### 4.3. Asociar Minions a estados
-
-
-
-![](./images/.png)
-
-### 4.4. Comprobar: estados definidos
-
-
-
-![](./images/.png)
-
 ### 4.5. Aplicar el nuevo estado
 
-
-
-![](./images/.png)
+![](./images/4-5.png)
 
 ---
 
@@ -79,22 +21,6 @@
 
 ### 5.1. Crear estado "users"
 
+![](./images/5-1.png)
 
-
-![](./images/.png)
-
-### 5.2. Crear estado "directories"
-
-
-
-![](./images/.png)
-
----
-
-## 6. Añadir Minion de otro SO
-
-
-
-![](./images/.png)
-
----
+### 5.2. Crear estado "files"
